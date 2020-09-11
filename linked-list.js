@@ -30,5 +30,16 @@ class LinkedList {
         this.next = newNode
         return this
     }
+
+    prepend(value) {
+        const newNode = {
+            value: value,
+            next: null
+        }
+        newNode.next = this.head
+        this.head = newNode
+        this.length++
+        return this
+    }
     
 }
