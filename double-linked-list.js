@@ -1,16 +1,3 @@
-// let myLinkedList = {
-//     head: {
-//         value: 10,
-//         next: {
-//             value: 5,
-//             next: {
-//                 value: 16,
-//                 next: null
-//             }
-//         }
-//     }
-// }
-
 class Node {
     constructor(value) {
         this.value = value
@@ -22,7 +9,8 @@ class LinkedList {
     constructor(value) {
         this.head = {
             value: value,
-            next: null
+            next: null,
+            previous: null
         }
         this.tail = this.head
         this.length = 1
@@ -62,7 +50,7 @@ class LinkedList {
         }
         const newNode = new Node(value)
         let current = this.head
-        for (let i=1; i < index; i++) {
+        for (let i=0; i < index; i++) {
             current = current.next
         }
         newNode.next = current.next
@@ -71,7 +59,7 @@ class LinkedList {
         return this
     }
 
-    remove(index) {
+        remove(index) {
         let current = this.head
         let next = current.next
         for (let i=1; i < index; i++) {
