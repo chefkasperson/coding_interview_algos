@@ -42,5 +42,32 @@ class LinkedList {
         this.length++
         return this
     }
+
+    printList() {
+        const array = []
+        let currentNode = this.head
+        while (currentNode) {
+            array.push(currentNode.value)
+            currentNode = currentNode.next
+        }
+        return array
+    }
     
+    insert(index, value) {
+        if (index === 0) {
+            return this.prepend(value)
+        }
+        if (index >= this.length) {
+            return this.append(value)
+        }
+        const newNode = new Node(value)
+        let current = this.head
+        for (let i=1; i < index; i++) {
+            current = current.next
+        }
+        newNode.next = current.next
+        current.next = newNode
+        this.length++
+        return this
+    }
 }
