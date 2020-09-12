@@ -2,6 +2,7 @@ class Node {
     constructor(value) {
         this.value = value
         this.next = null
+        this.previous = null
     }
 }
 
@@ -18,6 +19,7 @@ class LinkedList {
 
     append(value) {
         const newNode = new Node(value)
+        newNode.previous = this.tail
         this.tail.next = newNode
         this.next = newNode
         return this
@@ -26,6 +28,7 @@ class LinkedList {
     prepend(value) {
         const newNode = new Node(value)
         newNode.next = this.head
+        this.head.previous = newNode
         this.head = newNode
         this.length++
         return this
@@ -54,12 +57,14 @@ class LinkedList {
             current = current.next
         }
         newNode.next = current.next
+        current.next.previous = newNode
+        newNode.previous = current
         current.next = newNode
         this.length++
         return this
     }
 
-        remove(index) {
+    remove(index) {
         let current = this.head
         let next = current.next
         for (let i=1; i < index; i++) {
