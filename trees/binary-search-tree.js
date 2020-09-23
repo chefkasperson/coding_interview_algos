@@ -47,7 +47,7 @@ class BinarySearchTree {
             } else if (currentNode.value === value) {
                 return currentNode
             }
-            return false
         }
+        return false
     }
 }
