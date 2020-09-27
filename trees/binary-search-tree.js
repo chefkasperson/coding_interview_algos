@@ -107,7 +107,7 @@ class BinarySearchTree {
                     }
                 }
                 return true
-            }) 
+            } 
         }
     }
 }
