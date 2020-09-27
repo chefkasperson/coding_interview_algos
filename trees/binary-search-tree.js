@@ -50,4 +50,44 @@ class BinarySearchTree {
         }
         return false
     }
+
+    remove(value) {
+        if (!this.root) {
+            return false
+        }
+        let currentNode = this.root
+        let parentNode = null
+        while(currentNodeO) {
+            if (value < currentNode.value) {
+                parentNode = curentNode
+                currentNode = currentNode.left
+            } else if (value > currentNode.value) {
+                parentNode = currentNode
+                currentNode = currentNode.right
+            } else if (value === currentNode.value) {
+                if (currentNode.right === null) {
+                    if (parrentNode === null) {
+                        this.root = currentNode.left
+                    } else {
+                        if (currentNode.value < parentNode.value) {
+                            parentNode.left = currentNode.left
+                        } else if (currentNode.value > parentNode.value) {
+                            parentNode.right = currentNode
+                        }
+                    }
+                } else if (currentNode.right.left === null) {
+                    currentNode.right.left = currentNode.left 
+                    if (parentNode === null) {
+                        this.root = currentNode.right
+                    } else {
+                        if (currentNode.value < parentNode.value) {
+                            parentNode.left = currentNode.right 
+                        } else if (currentNode.value > parentNode.value) {
+                            parentNode.right = currentNode.right
+                        }
+                    }
+                }
+            }) 
+        }
+    }
 }
