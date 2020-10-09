@@ -6,9 +6,9 @@ function selectionSort(array) {
         let min = i
         let temp = array[i]
         for (let j = i+1; j < length; j++) {
-            if (array[j] < array[min] {
+            if (array[j] < array[min]) {
                 min = j
-            })
+            }
         }
 
         array[i] = array[min]
